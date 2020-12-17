@@ -4,16 +4,21 @@
 		margin-top: 0px;
 	}
 	h1{
-		font-size: 4rem;
-		margin-bottom: 5px;
+		font-size: 5rem;
+		margin-bottom: 0px;
+		margin-top: 0px;
+		border: 1px solid black;
+		border-right: 0px;
+		border-left: 0px;
 	}
 	h2{
-		font-weight: 2rem;
+		font-size: 2rem;
 		margin-bottom: 0px;
 	}
 	h3{
 		text-align: center;
-		font-size:3rem;
+		font-size:4rem;
+		margin-top: 5px;
 	}
 </style>
 <script>
