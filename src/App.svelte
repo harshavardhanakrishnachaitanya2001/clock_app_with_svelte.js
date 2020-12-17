@@ -20,6 +20,8 @@
 	let hours=12;
 	let minutes=0;
 	let seconds=0;
+	let i=1;
+	let amorpm='a.m.'
 	setInterval(() => {	
 		seconds++;
 		seconds=seconds;
@@ -31,17 +33,20 @@
 		seconds=0;
 		minutes=0;
 		hours+=1;
+		i++;
 	}
 	if (hours===12 && minutes===60){
 		hours=1;
 		minutes=0;
 		seconds=0;
 	}
+	if(i===12){
+		amorpm='p.m.';
+	}
 	}, 1000);
-
 </script>
 <div>
 	<h1>Clock with svelte</h1>
 	<h2>Developed by G. Harshavardhana Krishna Chaitanya</h2>
-	<h3>Time of day: {hours}:{minutes}:{seconds}</h3>
+	<h3>Time of day: {hours}:{minutes}:{seconds}{amorpm}</h3>
 </div>
