@@ -16,6 +16,7 @@
 	h2{
 		font-size: 2rem;
 		margin-bottom: 0px;
+		margin-top: 15px;
 	}
 	h3{
 		text-align: center;
@@ -30,6 +31,7 @@
 	}
 	label{
 		text-align: center;
+		margin-top: 25px;
 	}
 	button{
 		cursor:pointer;
