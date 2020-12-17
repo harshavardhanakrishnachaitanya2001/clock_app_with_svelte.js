@@ -10,6 +10,8 @@
 		border: 1px solid black;
 		border-right: 0px;
 		border-left: 0px;
+		color:burlywood;
+		background:black;
 	}
 	h2{
 		font-size: 2rem;
@@ -19,6 +21,12 @@
 		text-align: center;
 		font-size:4rem;
 		margin-top: 5px;
+	}
+
+	img{
+		height:5rem;
+		width: 5rem;
+		margin-left: 1rem;
 	}
 </style>
 <script>
@@ -49,9 +57,34 @@
 		amorpm='p.m.';
 	}
 	}, 1000);
+	let usersHours='';
+	let usersMinutes='';
+	let setHours;
+	let setMinutes;
+	function handleHoursChange(e){
+		e.preventDefault();
+		usersHours-e.target.value;
+	};
+	function handleMinutesChange(e){
+		e.preventDefault();
+		usersMinutes=e.target.data;
+	};
+	function handleClick(){
+		setHours=usersHours;
+		setMinutes=usersMinutes;
+	};
 </script>
+<h1>
+	Clock with svelte
+	<img src='images/icon.jfif' alt="clockImage"/>
+</h1>
 <div>
-	<h1>Clock with svelte</h1>
 	<h2>Developed by G. Harshavardhana Krishna Chaitanya</h2>
 	<h3>Time of day: {hours}:{minutes}:{seconds}{amorpm}</h3>
+	<input type='number' on:change={handleHoursChange} value={usersHours}/>
+	<input type='number' on:change={handleMinutesChange} data={usersMinutes}/>
+	<button on:click={handleClick}>Set</button>
+
+
+	<p>{setMinutes}	{setMinutes}</p>
 </div>
