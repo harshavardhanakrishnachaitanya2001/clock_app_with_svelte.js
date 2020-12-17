@@ -20,7 +20,7 @@
 	h3{
 		text-align: center;
 		font-size:4rem;
-		margin-top: 5px;
+		margin-top:4rem;
 	}
 
 	img{
@@ -28,50 +28,50 @@
 		width: 5rem;
 		margin-left: 1rem;
 	}
+	label{
+		text-align: center;
+	}
+	button{
+		cursor:pointer;
+	}
 </style>
 <script>
-	let hours=12;
-	let minutes=0;
+	let usersHours=12;
+	let usersMinutes=0;
+	let setHours=12;
+	let setMinutes=0;
 	let seconds=0;
-	let i=1;
-	let amorpm='a.m.'
 	setInterval(() => {	
 		seconds++;
 		seconds=seconds;
 		if(seconds===60){
-		minutes++;
+		setMinutes++;
 		seconds=0;
 	}
-	if(minutes===60&& hours!=12){
+	if(setMinutes===60&& setHours!=12){
 		seconds=0;
-		minutes=0;
-		hours+=1;
-		i++;
+		setMinutes=0;
+		setHours+=1;
 	}
-	if (hours===12 && minutes===60){
-		hours=1;
-		minutes=0;
+	if (setHours===12 && setMinutes===60){
+		setHours=1;
+		setMinutes=0;
 		seconds=0;
-	}
-	if(i===12){
-		amorpm='p.m.';
 	}
 	}, 1000);
-	let usersHours='';
-	let usersMinutes='';
-	let setHours;
-	let setMinutes;
 	function handleHoursChange(e){
 		e.preventDefault();
 		usersHours-e.target.value;
 	};
-	function handleMinutesChange(e){
+	function handleMinutesChange(event){
 		e.preventDefault();
-		usersMinutes=e.target.data;
+		usersMinutes=event.target.value;
 	};
 	function handleClick(){
 		setHours=usersHours;
 		setMinutes=usersMinutes;
+		usersHours='';
+		usersMinutes='';
 	};
 </script>
 <h1>
@@ -80,11 +80,10 @@
 </h1>
 <div>
 	<h2>Developed by G. Harshavardhana Krishna Chaitanya</h2>
-	<h3>Time of day: {hours}:{minutes}:{seconds}{amorpm}</h3>
-	<input type='number' on:change={handleHoursChange} value={usersHours}/>
-	<input type='number' on:change={handleMinutesChange} data={usersMinutes}/>
-	<button on:click={handleClick}>Set</button>
-
-
-	<p>{setMinutes}	{setMinutes}</p>
+	<label>
+		<b>Hours:</b> <input type='number' on:change={handleHoursChange} bind:value={usersHours}/>
+		<b>Minutes:</b> <input type='number' on:change={handleMinutesChange} bind:value={usersMinutes}/>
+		<button on:click={handleClick}>Set</button>
+	</label>
+	<h3>Time of day: {setHours}:{setMinutes}:{seconds}</h3>
 </div>
