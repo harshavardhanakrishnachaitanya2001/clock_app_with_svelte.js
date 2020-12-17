@@ -38,10 +38,11 @@
 	}
 </style>
 <script>
-	let usersHours=12;
-	let usersMinutes=0;
-	let setHours=12;
-	let setMinutes=0;
+	let today=new Date();
+	let usersHours='';
+	let usersMinutes='';
+	let setHours=today.getHours();
+	let setMinutes=today.getMinutes();
 	let seconds=0;
 	setInterval(() => {	
 		seconds++;
@@ -50,12 +51,12 @@
 		setMinutes++;
 		seconds=0;
 	}
-	if(setMinutes===60&& setHours!=12){
+	if(setMinutes===60&& setHours!=24){
 		seconds=0;
 		setMinutes=0;
 		setHours+=1;
 	}
-	if (setHours===12 && setMinutes===60){
+	if (setHours===24 && setMinutes===60){
 		setHours=1;
 		setMinutes=0;
 		seconds=0;
