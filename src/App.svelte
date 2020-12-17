@@ -20,7 +20,6 @@
 	let hours=12;
 	let minutes=0;
 	let seconds=0;
-	let amOrPm="A.M."
 	setInterval(() => {	
 		seconds++;
 		seconds=seconds;
@@ -37,7 +36,6 @@
 		hours=1;
 		minutes=0;
 		seconds=0;
-		amOrPm=!amOrPm;
 	}
 	}, 1000);
 
@@ -45,5 +43,5 @@
 <div>
 	<h1>Clock with svelte</h1>
 	<h2>Developed by G. Harshavardhana Krishna Chaitanya</h2>
-	<h3>Time of day: {hours}:{minutes}:{seconds} {amOrPm}</h3>
+	<h3>Time of day: {hours}:{minutes}:{seconds}</h3>
 </div>
